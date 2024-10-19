@@ -8,7 +8,7 @@
       variant="outlined"
     ></v-text-field>
 
-    <v-btn class="mt-2 bg-primary" type="submit" block prepend-icon="mdi-login"
+    <v-btn class="mt-2 bg-yellow-darken-4" type="submit" block prepend-icon="mdi-login"
       >Login</v-btn
     >
   </v-form>

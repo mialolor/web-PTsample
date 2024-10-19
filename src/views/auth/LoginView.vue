@@ -32,7 +32,7 @@ const { mobile } = useDisplay()
 
               <h5 class="text-center">
                 Don't have account?
-                <RouterLink class="text-primary" to="/register"
+                <RouterLink class="text-yellow-darken-4 font-weight-black" to="/register"
                   >Click here to Register</RouterLink
                 >
               </h5>
