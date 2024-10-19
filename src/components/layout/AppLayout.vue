@@ -1,15 +1,16 @@
 <script setup>
 import { ref } from 'vue'
 
-const theme = ref('light')
+const theme = ref(localStorage.getItem('theme') ?? 'light')
 
 function onClick() {
   theme.value = theme.value === 'light' ? 'dark' : 'light'
+  localStorage.setItem('theme', theme.value)
 }
 </script>
 
 <template>
-  <v-responsive class="border rounded">
+  <v-responsive>
     <v-app :theme="theme">
       <v-app-bar
         class="px-3"
@@ -33,8 +34,12 @@ function onClick() {
       </v-main>
 
       <v-footer
+        class="font-weight-bold"
         :color="theme === 'light' ? 'grey-lighten-1' : 'grey-darken-3'"
-        elevation="24" border app>2024 - Copyright PawTrack
+        elevation="24"
+        border
+        app
+        >2024 - Copyright PawTrack
       </v-footer>
     </v-app>
   </v-responsive>

@@ -19,7 +19,7 @@
     ></v-text-field>
 
     <v-btn
-      class="mt-2 bg-primary"
+      class="mt-2 bg-yellow-darken-4"
       type="submit"
       block
       prepend-icon="mdi-account-plus"
