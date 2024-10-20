@@ -20,6 +20,7 @@ function onClick() {
         <v-spacer></v-spacer>
 
         <v-btn
+        class="bg-yellow-darken-4"
           :icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'"
           variant="elevated"
           slim
@@ -28,9 +29,7 @@ function onClick() {
       </v-app-bar>
 
       <v-main>
-        <v-container>
           <slot name="content"> </slot>
-        </v-container>
       </v-main>
 
       <v-footer
