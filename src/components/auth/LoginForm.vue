@@ -1,25 +1,51 @@
 <script setup>
+import { requiredValidator, emailValidator } from '@/utils/validators'
 import { ref } from 'vue'
 
 const isPasswordVisible = ref(false)
+const refVForm = ref()
 
+//this is an object wana naka =>
+const formDataDefault = {
+  email: '',
+  password: '',
+}
+
+const formData = ref({
+  ...formDataDefault  //javascript, string operator
+})
+
+const onSubmit = () => {
+//alert(formData.value.email)
+
+}
+
+const onFormSubmit = () => {
+  refVForm.value?.validate().then(({ valid }) => {
+    if (valid)
+    onSubmit()
+  })
+}
 </script>
 
-
 <template>
-  <v-form fast-fail @submit.prevent>
-    <v-text-field label="Email" prepend-inner-icon="mdi-email"></v-text-field>
+  <v-form ref="refVForm" @submit.prevent="onFormSubmit">
+    <v-text-field
+    v-model="formData.email"
+      label="Email"
+      prepend-inner-icon="mdi-email"
+      :rules="[requiredValidator, emailValidator]"
+    ></v-text-field>
 
     <v-text-field
+    v-model="formData.password"
       prepend-inner-icon="mdi-lock"
       label="Password"
       :type="isPasswordVisible ? 'text' : 'password'"
       :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
       @click:append-inner="isPasswordVisible = !isPasswordVisible"
-    >
-    </v-text-field>
-
-    
+      :rules="[requiredValidator]"
+    ></v-text-field>
 
     <v-btn
       class="mt-2 bg-yellow-darken-4"

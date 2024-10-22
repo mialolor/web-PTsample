@@ -15,14 +15,14 @@ const { mobile } = useDisplay()
             <v-card class="mx-auto" elevation="24">
               <v-card-title class="text-center">
                 <v-img
-                  class="mx-auto"
+                  class="mx-auto mt-6"
                   src="/images/logo-favicon.png"
                   :width="mobile ? '50%' : '30%'"
                   style="border-radius: 50%; overflow: hidden"
                 ></v-img>
 
                 <h3 class="font-weight-black text-center">PawTrack</h3>
-                <p class="font-weight-bold">Login Form</p>
+                <p class="font-weight-bold mb-5">Login Form</p>
               </v-card-title>
 
               <v-card-text class="bg-surface-light pt-4">
