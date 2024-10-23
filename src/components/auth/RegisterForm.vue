@@ -74,7 +74,7 @@ const onFormSubmit = () => {
           :type="isPasswordVisible ? 'text' : 'password'"
           :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
           @click:append-inner="isPasswordVisible = !isPasswordVisible"
-          :rules="[requiredValidator]"
+          :rules="[requiredValidator, passwordValidator]"
         ></v-text-field>
       </v-col>
 
@@ -84,14 +84,9 @@ const onFormSubmit = () => {
           label="Password Confirmation"
           :type="isPasswordConfirmVisible ? 'text' : 'password'"
           :append-inner-icon="
-            isPasswordConfirmVisible ? 'mdi-eye-off' : 'mdi-eye'
-          "
-          @click:append-inner="
-            isPasswordConfirmVisible = !isPasswordConfirmVisible
-          "
-          :rules="[
-            requiredValidator,
-            confirmedValidator(
+            isPasswordConfirmVisible ? 'mdi-eye-off' : 'mdi-eye'"
+          @click:append-inner="isPasswordConfirmVisible = !isPasswordConfirmVisible"
+          :rules="[requiredValidator,confirmedValidator(
               formData.password_confirmation,
               formData.password,
             ),
