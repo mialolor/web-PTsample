@@ -74,7 +74,7 @@ const onFormSubmit = () => {
           :type="isPasswordVisible ? 'text' : 'password'"
           :append-inner-icon="isPasswordVisible ? 'mdi-eye-off' : 'mdi-eye'"
           @click:append-inner="isPasswordVisible = !isPasswordVisible"
-          :rules="[requiredValidator, passwordValidator]"
+          :rules="[requiredValidator,passwordValidator]"
         ></v-text-field>
       </v-col>
 

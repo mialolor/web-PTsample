@@ -18,7 +18,7 @@ const { mobile } = useDisplay()
                 <v-img
                   class="mx-auto mt-6"
                   src="/images/PawTrack Logo (3).png"
-                  :width="mobile ? '60%' : '50%'"
+                  :width="mobile ? '60%' : '40%'"
                   style="border-radius: 50%; overflow: hidden"
                 ></v-img>
 
