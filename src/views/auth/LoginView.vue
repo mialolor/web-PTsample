@@ -11,7 +11,12 @@ const { mobile } = useDisplay()
     <template #content>
       <v-container fluid>
         <v-row>
-        <v-col cols="12" lg="8" class="bg-surface-light h-screen" v-if="!mobile"></v-col>
+        <v-col cols="12" lg="8" class="bg-surface-light h-screen" v-if="!mobile">
+          <v-img src="/images/haha.PNG" 
+          :width="'100%'" 
+          :height="'100%'"
+          ></v-img>
+        </v-col>
           <v-col cols="12" md="4" class="mx-auto pt-16">
             <v-card class="mx-auto" elevation="24">
               <v-card-title class="text-center">
@@ -33,14 +38,14 @@ const { mobile } = useDisplay()
 
                 <v-divider class="my-5"></v-divider>
 
-                <h5 class="text-center">
+                <h4 class="text-center">
                   Don't have account?
                   <RouterLink
                     class="text-yellow-darken-4 font-weight-black"
                     to="/register"
                     >Click here to Register</RouterLink
                   >
-                </h5>
+                </h4>
               </v-card-text>
             </v-card>
           </v-col>
