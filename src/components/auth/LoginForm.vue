@@ -8,7 +8,7 @@ const refVForm = ref()
 //this is an object wana naka =>
 const formDataDefault = {
   email: '',
-  password: '',
+  password: ''
 }
 
 const formData = ref({
@@ -29,7 +29,7 @@ const onFormSubmit = () => {
 </script>
 
 <template>
-  <v-form ref="refVForm" @submit.prevent="onFormSubmit">
+  <v-form class="mt-5" ref="refVForm" @submit.prevent="onFormSubmit">
     <v-text-field
     v-model="formData.email"
       label="Email"

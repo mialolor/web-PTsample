@@ -10,7 +10,7 @@ const { mobile } = useDisplay()
   <AppLayout :is-with-app-bar-nav-icon="false">
     <template #content>
       <v-container fluid>
-        <v-row>
+        <v-row :class="mobile ? 'd-flex justify-center' : ''" >
         <v-col cols="12" lg="8" class="bg-surface-light h-screen" v-if="!mobile">
           <v-img src="/images/haha.PNG" 
           :width="'100%'" 
@@ -18,7 +18,7 @@ const { mobile } = useDisplay()
           ></v-img>
         </v-col>
           <v-col cols="12" md="4" class="mx-auto pt-16">
-            <v-card class="mx-auto" elevation="24">
+            <v-card class="mx-auto" elevation="0" max-width="600">
               <v-card-title class="text-center">
                 <v-img
                   class="mx-auto mt-6"

@@ -1,5 +1,11 @@
 <script setup>
 import { ref } from 'vue'
+import { useDisplay } from 'vuetify'
+
+// const theme = ref('light')
+
+// Utilize predefined vue functions
+const { mobile } = useDisplay()
 
 const theme = ref(localStorage.getItem('theme') ?? 'light')
 
@@ -8,7 +14,7 @@ function onClick() {
   localStorage.setItem('theme', theme.value)
 }
 </script>
-
+  
 <template>
   <v-responsive>
     <v-app :theme="theme">
